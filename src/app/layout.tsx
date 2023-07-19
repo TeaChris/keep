@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/toaster'
 import { cn } from '@/lib/utils'
+import { CategoryProvider, FormDataProvider } from '@/context/store'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,11 +29,15 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-screen pt-12 bg-slate-50 antialiased">
-        <NavBar />
-        <div className="container max-w-7xl mx-auto h-full pt-12">
-          {children}
-        </div>
-        <Footer />
+        <CategoryProvider>
+          <FormDataProvider>
+            <NavBar />
+            <div className="container max-w-7xl mx-auto h-full pt-12">
+              {children}
+            </div>
+            {/* <Footer /> */}
+          </FormDataProvider>
+        </CategoryProvider>
         <Toaster />
       </body>
     </html>
