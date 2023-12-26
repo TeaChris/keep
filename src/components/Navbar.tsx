@@ -7,7 +7,7 @@ import ThemeSwitch from './ThemeSwitch.tsx'
 
 export default function Navbar() {
   return (
-    <nav className="sticky flex items-center h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-background backdrop-blur-lg transition-all">
+    <nav className="sticky flex items-center h-14 inset-x-0 top-0 w-full border-b border-border bg-background backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
         <div className="flex h-full items-center justify-between">
           <Link href="/" className="flex z-40 font-semibold gap-2 items-center">
