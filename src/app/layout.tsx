@@ -23,10 +23,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        'bg-white text-slate-900 antialiased light',
-        inter.className
-      )}
+      className={cn('bg-white antialiased light', inter.className)}
     >
       <body className="min-h-screen pt-12 bg-slate-50 antialiased">
         <CategoryProvider>
