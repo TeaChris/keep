@@ -6,6 +6,7 @@ import { siteConfig } from '@/config/site'
 import Navbar from '@/components/Navbar'
 import { Toaster } from 'sonner'
 import { Providers } from '@/Providers/themeProvider'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,21 +31,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body
-        className={cn(
-          'relative min-h-screen font-sans antialiased bg-background',
-          inter.className
-        )}
-      >
-        <Providers>
-          <main className="relative flex flex-col min-h-screen">
-            <Navbar />
-            <div className="flex-grow flex-1">{children}</div>
-          </main>
-        </Providers>
+      <ClerkProvider>
+        <body
+          className={cn(
+            'relative min-h-screen font-sans antialiased bg-background',
+            inter.className
+          )}
+        >
+          <Providers>
+            <main className="relative flex flex-col min-h-screen">
+              <Navbar />
+              <div className="flex-grow flex-1">{children}</div>
+            </main>
+          </Providers>
 
-        <Toaster richColors position="top-center" />
-      </body>
+          <Toaster richColors position="top-center" />
+        </body>
+      </ClerkProvider>
     </html>
   )
 }
