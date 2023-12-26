@@ -1,18 +1,24 @@
-import NavBar from '@/components/NavBar'
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/toaster'
 import { cn } from '@/lib/utils'
-import { CategoryProvider, FormDataProvider } from '@/context/store'
+import { Metadata } from 'next'
+import { siteConfig } from '@/config/site'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Bermuda: Task Manager',
-  description:
-    'An app that allows you to manage you tasks in an organized and efficient manner',
+  title: {
+    default: siteConfig.name,
+    template: '%s | ${siteConfig.name}',
+  },
+  description: siteConfig.description,
+  icons: [
+    {
+      url: '/logo.svg',
+      href: '/logo.svg',
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -21,20 +27,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={cn('bg-white antialiased light', inter.className)}
-    >
-      <body className="min-h-screen pt-12 bg-slate-50 antialiased">
-        <CategoryProvider>
-          <FormDataProvider>
-            <NavBar />
-            <div className="container max-w-7xl mx-auto h-full pt-12">
-              {children}
-            </div>
-            {/* <Footer /> */}
-          </FormDataProvider>
-        </CategoryProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        {children}
         <Toaster />
       </body>
     </html>
