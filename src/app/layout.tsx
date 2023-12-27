@@ -40,7 +40,6 @@ export default function RootLayout({
         <ClerkProvider>
           <Providers>
             <main className="relative flex flex-col min-h-screen">
-              <Navbar />
               <div className="flex-grow flex-1">{children}</div>
             </main>
           </Providers>
