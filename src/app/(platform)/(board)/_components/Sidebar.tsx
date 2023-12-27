@@ -1,15 +1,11 @@
 'use client'
 
-import Link from 'next/link'
-import { LayoutGrid, MessageCircle, BringToFront } from 'lucide-react'
 import { useLocalStorage } from 'usehooks-ts'
 
-import { Button } from '@/components/ui/button'
 import { Accordion } from '@/components/ui/accordion'
-import { Skeleton } from '@/components/ui/skeleton'
-import { Separator } from '@/components/ui/separator'
 
 import SidebatItem from './SidebatItem'
+import Headline from './Headlines'
 
 interface SidebarProps {
   storageKey?: string
@@ -41,10 +37,9 @@ export default function Sidebar({
     }))
   }
 
-
   return (
     <>
-      <div className="font-medium text-xs flex items-center mb-1 pt-14">
+      <div className="font-medium text-xs flex items-center mb-1 pt-4">
         <Accordion
           type="multiple"
           defaultValue={defaultAccordionValue}
@@ -55,6 +50,16 @@ export default function Sidebar({
             isExpanded={expanded}
             onExpand={onExpand}
           />
+        </Accordion>
+      </div>
+
+      <div className="font-medium text-xs flex items-center mb-1">
+        <Accordion
+          type="multiple"
+          defaultValue={defaultAccordionValue}
+          className="space-y-2 w-full"
+        >
+          <Headline key={'wertyuijnb'} />
         </Accordion>
       </div>
     </>

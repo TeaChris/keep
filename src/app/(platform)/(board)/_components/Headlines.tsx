@@ -1,3 +1,5 @@
+'use client'
+
 import {
   AccordionContent,
   AccordionItem,
@@ -5,52 +7,22 @@ import {
 } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import {
-  BringToFront,
-  CreditCard,
-  LayoutGrid,
-  MessageCircle,
-  Settings,
-} from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
 
-interface SidebarItemProps {
-  isExpanded: Record<string, any>
-  onExpand: (id: string) => void
-}
+interface HeadlineProps {}
 
 const routes = [
   {
-    icon: <LayoutGrid className="h-5 w-5 mr-2" />,
-    label: 'Dashboard',
-    href: '/users/dashboard',
+    label: 'Categories',
+    href: '/users/category',
   },
   {
-    icon: <BringToFront className="h-5 w-5 mr-2" />,
     label: 'Projects',
     href: '/users/projects',
   },
-  {
-    icon: <MessageCircle className="h-5 w-5 mr-2" />,
-    label: 'Chat',
-    href: '/users/chat',
-  },
-  {
-    label: 'Settings',
-    icon: <Settings className="h-4 w-4 mr-2" />,
-    href: '/users/settings',
-  },
-  {
-    label: 'Billing',
-    icon: <CreditCard className="h-4 w-4 mr-2" />,
-    href: '/users/billing',
-  },
 ]
 
-export default function SidebatItem({
-  isExpanded,
-  onExpand,
-}: SidebarItemProps) {
+export default function Headline({}: HeadlineProps) {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -63,11 +35,10 @@ export default function SidebatItem({
       <AccordionItem value={'item-1'} className="border-none">
         <AccordionTrigger
           className={cn(
-            'flex items-center text-lg gap-x-3 p-1.5 text-sky-500 rounded-md hover:primary/70 transition text-start no-underline hover:no-underline',
-            !isExpanded && 'bg-primary/80 font-semibold text-xl'
+            'flex items-center text-lg gap-x-3 p-1.5 text-sky-500 rounded-md hover:primary/70 transition text-start no-underline hover:no-underline'
           )}
         >
-          Main Menu
+          New
         </AccordionTrigger>
         <AccordionContent className="pt-1 text-neutral-500">
           {routes.map((route) => (
@@ -76,12 +47,11 @@ export default function SidebatItem({
               size="sm"
               onClick={() => onClick(route.href)}
               className={cn(
-                'w-full font-normal justify-start pl-10 mb-1',
+                'w-full font-semibold justify-start pl-10 mb-1',
                 pathname === route.href && 'bg-sky-500/30 text-sky-500'
               )}
               variant="ghost"
             >
-              {route.icon}
               {route.label}
             </Button>
           ))}

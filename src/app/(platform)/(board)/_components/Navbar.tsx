@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Plus } from 'lucide-react'
-import { OrganizationSwitcher, UserButton } from '@clerk/nextjs'
+import { UserButton } from '@clerk/nextjs'
 import { Icons } from '@/components/Icons'
 import Link from 'next/link'
 import ThemeSwitch from '@/components/ThemeSwitch.tsx'
