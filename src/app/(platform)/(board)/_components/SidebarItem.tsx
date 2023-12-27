@@ -47,7 +47,7 @@ const routes = [
   },
 ]
 
-export default function SidebatItem({
+export default function SidebarItem({
   isExpanded,
   onExpand,
 }: SidebarItemProps) {

@@ -4,7 +4,7 @@ import { useLocalStorage } from 'usehooks-ts'
 
 import { Accordion } from '@/components/ui/accordion'
 
-import SidebatItem from './SidebatItem'
+import SidebarItem from './SidebarItem'
 import Headline from './Headlines'
 
 interface SidebarProps {
@@ -45,7 +45,7 @@ export default function Sidebar({
           defaultValue={defaultAccordionValue}
           className="space-y-2 w-full"
         >
-          <SidebatItem
+          <SidebarItem
             key={'wertyuijnb'}
             isExpanded={expanded}
             onExpand={onExpand}
