@@ -1,4 +1,4 @@
-import Sidebar from '../../../_components/Sidebar'
+import Sidebar from '../../_components/Sidebar'
 
 export default function DashboardLayout({
   children,
@@ -11,7 +11,9 @@ export default function DashboardLayout({
         <div className="w-[20%] shrink-0 hidden md:block h-full">
           <Sidebar />
         </div>
-        <div className="w-[80%] h-full bg-secondary inset-2">{children}</div>
+        <div className="w-full md:w-[80%] h-full bg-secondary inset-2">
+          {children}
+        </div>
       </div>
     </main>
   )

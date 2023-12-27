@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="flex items-center gap-x-4">
         <Link href="/" className="flex z-40 font-semibold gap-2 items-center">
           <Icons.logo className="h-9 w-9" />
-          <h5 className="text-foreground text-xl">Taskzen</h5>
+          <h5 className="hidden md:flex text-foreground text-xl">Taskzen</h5>
         </Link>
         <Button
           size="sm"
