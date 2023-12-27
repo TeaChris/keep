@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import MaxWidthWrapper from './MaxWidthWrapper'
-import { Icons } from './Icons'
-import { buttonVariants } from './ui/button'
 import { ArrowRight, Menu } from 'lucide-react'
-import ThemeSwitch from './ThemeSwitch.tsx'
 import { UserButton, auth } from '@clerk/nextjs'
+import MaxWidthWrapper from '@/components/MaxWidthWrapper'
+import { Icons } from '@/components/Icons'
+import { buttonVariants } from '@/components/ui/button'
+import ThemeSwitch from '@/components/ThemeSwitch.tsx'
 
 export default function Navbar() {
   const { userId } = auth()

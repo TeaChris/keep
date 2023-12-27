@@ -3,10 +3,8 @@ import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
-import Navbar from '@/components/Navbar'
 import { Toaster } from 'sonner'
 import { Providers } from '@/Providers/themeProvider'
-import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -37,15 +35,13 @@ export default function RootLayout({
           inter.className
         )}
       >
-        <ClerkProvider>
-          <Providers>
-            <main className="relative flex flex-col min-h-screen">
-              <div className="flex-grow flex-1">{children}</div>
-            </main>
-          </Providers>
+        <Providers>
+          <main className="relative flex flex-col min-h-screen">
+            <div className="flex-grow flex-1">{children}</div>
+          </main>
+        </Providers>
 
-          <Toaster richColors position="top-center" />
-        </ClerkProvider>
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   )
