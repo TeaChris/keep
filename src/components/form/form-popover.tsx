@@ -15,6 +15,7 @@ import { FormSubmit } from './form-submit'
 import { Button } from '../ui/button'
 import { X } from 'lucide-react'
 import { toast } from 'sonner'
+import { FormTextarea } from './form-textarea'
 
 interface FormPopoverProps {
   children: React.ReactNode
@@ -42,8 +43,11 @@ export default function FormPopover({
 
   const onSubmit = (formData: FormData) => {
     const title = formData.get('title') as string
+    const description = formData.get('title') as string
+    const urgency = formData.get('title') as string
+    const category = formData.get('title') as string
 
-    execute({ title })
+    execute({ title, description, urgency, category })
   }
 
   return (
@@ -72,6 +76,11 @@ export default function FormPopover({
               id="title"
               label="Task title"
               type="text"
+              errors={fieldErrors}
+            />
+            <FormTextarea
+              id="description"
+              label="Task description"
               errors={fieldErrors}
             />
           </div>

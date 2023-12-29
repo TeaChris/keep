@@ -16,7 +16,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     }
   }
 
-  const { title } = data
+  const { title, description, categoryId, urgencyId } = data
 
   let task
 
@@ -24,6 +24,10 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     task = await db.task.create({
       data: {
         title,
+        userId,
+        description,
+        categoryId,
+        urgencyId,
       },
     })
   } catch (error) {
