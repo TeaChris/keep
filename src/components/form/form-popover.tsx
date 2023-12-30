@@ -16,6 +16,8 @@ import { Button } from '../ui/button'
 import { X } from 'lucide-react'
 import { toast } from 'sonner'
 import { FormTextarea } from './form-textarea'
+import FormCombo from './form-combo'
+import { getCategories } from '@/samples/categories'
 
 interface FormPopoverProps {
   children: React.ReactNode
@@ -43,11 +45,11 @@ export default function FormPopover({
 
   const onSubmit = (formData: FormData) => {
     const title = formData.get('title') as string
-    const description = formData.get('title') as string
-    const urgency = formData.get('title') as string
-    const category = formData.get('title') as string
+    const description = formData.get('description') as string
+    const urgencyId = formData.get('urgencyId') as string
+    const categoryId = formData.get('CategoryId') as string
 
-    execute({ title, description, urgency, category })
+    execute({ title, description, urgencyId, categoryId })
   }
 
   return (
@@ -83,6 +85,7 @@ export default function FormPopover({
               label="Task description"
               errors={fieldErrors}
             />
+            <FormCombo />
           </div>
           <FormSubmit className="w-full">Create</FormSubmit>
         </form>
