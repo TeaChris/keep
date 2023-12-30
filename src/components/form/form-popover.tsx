@@ -17,7 +17,6 @@ import { X } from 'lucide-react'
 import { toast } from 'sonner'
 import { FormTextarea } from './form-textarea'
 import FormCombo from './form-combo'
-import { getCategories } from '@/samples/categories'
 
 interface FormPopoverProps {
   children: React.ReactNode
