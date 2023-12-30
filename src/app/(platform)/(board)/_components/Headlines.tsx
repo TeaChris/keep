@@ -13,10 +13,6 @@ interface HeadlineProps {}
 
 const routes = [
   {
-    label: 'Categories',
-    href: '/users/category',
-  },
-  {
     label: 'Projects',
     href: '/users/projects',
   },
