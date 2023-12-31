@@ -26,11 +26,6 @@ const routes = [
     href: '/users/dashboard',
   },
   {
-    icon: <BringToFront className="h-5 w-5 mr-2" />,
-    label: 'Projects',
-    href: '/users/projects',
-  },
-  {
     icon: <MessageCircle className="h-5 w-5 mr-2" />,
     label: 'Chat',
     href: '/users/chat',

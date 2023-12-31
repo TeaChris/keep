@@ -1,5 +1,5 @@
 import { Separator } from '@/components/ui/separator'
-import Info from './_components/Info'
+import Info from '../../../_components/Info'
 import { FormInput } from '@/components/form/form-input'
 import { Search } from 'lucide-react'
 import { TaskList } from './_components/TaskList'
